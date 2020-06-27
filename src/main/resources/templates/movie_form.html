@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Movie from</title>
+</head>
+<body>
+<h2>Rate a Movie</h2>
+<form action="#" th:action="@{/movie}" th:object="${movie}" method="post">
+    Title: <input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"> </span> <br />
+    Rating: <input type="text" th:field="*{rating}" />
+    <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"> </span> <br />
+    Name of Reviewer: <input type="text" th:field="*{reviewer}" />
+    <span th:if="${#fields.hasErrors('reviewer')}" th:errors="*{reviewer}"> </span> <br />
+    <input type="submit" value="submit" />
+</form>
+</body>
+</html>
