@@ -23,14 +23,14 @@ public class Movies {
         return "index";
     }
 
-    @GetMapping("/movie/new")
+    @GetMapping("/movies/new")
     public String createMovieRating(Model model) {
         Rating rating = new Rating();
         model.addAttribute("movie", rating);
         return "movie_form";
     }
 
-    @PostMapping("/movie")
+    @PostMapping("/movies/new")
     public String processMovieForm(@Valid Rating rating, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "movie_form";
